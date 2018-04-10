@@ -1,0 +1,2 @@
+libfaac.a
+*.a

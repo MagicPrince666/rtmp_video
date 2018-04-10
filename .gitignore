@@ -1,0 +1,4 @@
+lib/*.a
+faac-1.28/
+objs/*.o
+rtmp_push

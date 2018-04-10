@@ -1,0 +1,30 @@
+
+#include "recorder.h"
+#include "player.h"
+
+#include <faac.h>
+
+typedef unsigned long   ULONG;
+typedef unsigned int    UINT;
+typedef unsigned char   BYTE;
+typedef char            _TCHAR;
+
+int main(int argc, char *argv[])
+{
+    Recorder  recorder;
+    unsigned  char* buf;
+
+    while(true)
+    {
+        int r = recorder.recodeAAC(buf);
+        printf("RET : %d\n",r);
+    }
+
+    return 0;
+}
+
+
+
+
+
+
