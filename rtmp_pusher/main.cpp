@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-// #include <memwatch.h>
+
 
 int main(int argc, char* argv[])
 {
@@ -12,9 +12,9 @@ int main(int argc, char* argv[])
 	if(argc < 7)
 	{
 		cout << "TIPS: " << argv[0]<< "  videodev(\"/dev/video1\")"<< " audiodev(\"default\") " <<" bitrate(1024)" << " fps(30) " << "SYNCFLAG(1,0)" 
-		<<" rtmpserver(\"rtmp://baoqianli.8686c.com/live/d272ef7c48d742889c7b5ed8b74dde5d?wsRecord=off\") "  <<endl;
-		cout << "(SIMPLE VERSION, NO RTMP SERVER )YOU CAN  : " << "./RtmpPusher /dev/video1 default 2048 30 1"  <<endl;
-		cout << "(ADVANTAGE VERSION)YOU CAN  : " << "./RtmpPusher /dev/video1 default 2048 30 1 rtmp://baoqianli.8686c.com/live/d272ef7c48d742889c7b5ed8b74dde5d?wsRecord=off"  <<endl;
+		<<" rtmpserver(\"rtmp://127.0.0.1/live/livestream\") "  <<endl;
+		cout << "(SIMPLE VERSION, NO RTMP SERVER )YOU CAN  : " << argv[0] <<" /dev/video1 default 2048 30 1"  <<endl;
+		cout << "(ADVANTAGE VERSION)YOU CAN  : " << argv[0] <<" /dev/video1 default 2048 30 1 rtmp://127.0.0.1/live/livestream"  <<endl;
 		return 0;
 	}
 	
@@ -24,8 +24,7 @@ int main(int argc, char* argv[])
 		setAudioDevice(argv[2]);
 		setSync(atoi(argv[5]));
 		// const char *data = "rtmp://127.0.0.1/live/livestream";
-//		rtmp://baoqianli.8686c.com/live/d5f742ff87bb4aaab0fa37e21d26ec1f
-		//const char *data = "rtmp://baoqianli.8686c.com/live/d272ef7c48d742889c7b5ed8b74dde5d?wsRecord=off";
+
 		char data[200];
 		memset(data,0, sizeof(data));	
 		memcpy(data,argv[6], strlen(argv[6]));
