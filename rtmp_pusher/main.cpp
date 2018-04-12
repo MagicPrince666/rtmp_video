@@ -29,9 +29,9 @@ int main(int argc, char* argv[])
 		memset(data,0, sizeof(data));	
 		memcpy(data,argv[6], strlen(argv[6]));
 		
-		printf("\n url: %s \n", data);
+		printf("\nurl: %s \n", data);
 
-		cout <<" RTMPSERVER: "<< data << endl;
+		cout <<"RTMPSERVER: "<< data << endl;
 		RtmpSmartPusher pusher;
 		pusher.Init((char*)data);
 		pusher.startPush();
